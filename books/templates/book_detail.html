@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ book.title }}</h1>
+    <p><strong>Автор:</strong> {{ book.author.name }}</p>
+    <img src="{{ book.img_src }}" alt="{{ book.title }}" width="200">
+    <p><strong>Дата публикации:</strong> {{ book.publication_date }}</p>
+    <p>{{ book.details.description }}</p>
+
+    <h3>Об авторе</h3>
+    <img src="{{ book.author.img_src }}" alt="{{ book.author.name }}" width="100">
+    <p>{{ book.author.bio }}</p>
+{% endblock %}
+    
