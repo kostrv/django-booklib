@@ -1,5 +1,5 @@
 """
-URL configuration for booklib project.
+URL configuration for book_catalog project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
