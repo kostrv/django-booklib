@@ -1,4 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'books/base.html' %}
+
+{% load static %}
 
 {% block title %}Каталог книг{% endblock %}
 
@@ -9,7 +11,8 @@
             <div class="book-card">
                 <h2><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></h2>
                 <p><strong>Автор:</strong> {{ book.author.name }}</p>
-                <img src="{{ book.img_src }}" alt="{{ book.title }}" width="100">
+
+                <img src="{% static 'books/img/' %}{{ book.img_src }}" alt="{{ book.title }}" width="150">
                 <p>{{ book.short_desc }}</p>
             </div>
         {% endfor %}
