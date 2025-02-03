@@ -43,3 +43,7 @@ header nav a:hover {
     margin: auto; 
     color: #2e3319; 
 }
+
+.capitalize {
+    text-transform: capitalize;
+}
