@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
 from .models import Book
 
 
@@ -13,6 +14,17 @@ def book_detail(request, book_id):
 
 
 def search_books(request):
-    query = request.GET.get('q')
-    books = Book.objects.filter(title__icontains=query) if query else []
+    query = request.GET.get('q', '').strip().lower()  # Приводим запрос к нижнему регистру
+
+    if query:
+        words = query.split()  # Разбиваем строку запроса на отдельные слова
+        filters = Q()
+
+        for word in words:
+            filters |= Q(title__icontains=word)  
+
+        books = Book.objects.filter(filters)
+    else:
+        books = []
+
     return render(request, 'books/search.html', {'books': books})
