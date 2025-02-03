@@ -4,17 +4,28 @@
 
 {% block title %}{{ book.title }}{% endblock %}
 
-{% block content %}
-    <h1>{{ book.title }}</h1>
-    <img src="{% static 'books/img/' %}{{ book.img_src }}" alt="{{ book.title }}" width="150">
-
-    <p><strong>Автор:</strong> {{ book.author.name }}</p>
-
-    <p><strong>Дата публикации:</strong> {{ book.publication_date }}</p>
-    <p>{{ book.details.description }}</p>
-
-    <h3>Об авторе</h3>
-    <img src="{% static 'books/img/' %}{{ book.author.img_src }}" alt="{{ book.author.name }}" width="100">
-    <p>{{ book.author.bio }}</p>
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'books/css/book_detail.css' %}">
 {% endblock %}
-    
+
+{% block content %}
+    <div class="book-detail">
+        <img class="book-cover" src="{% static 'books/img/' %}{{ book.img_src }}" alt="{{ book.title }}">
+
+        <div class="book-info">
+            <h1>{{ book.title }}</h1>
+            <p><strong>Автор:</strong> {{ book.author.name }}</p>
+            <p><strong>Дата публикации:</strong> {{ book.publication_date }}</p>
+            <p>{{ book.details.description }}</p>
+        </div>
+    </div>
+
+    <div class="author-detail">
+        <img class="author-photo" src="{% static 'books/img/' %}{{ book.author.img_src }}" alt="{{ book.author.name }}">
+
+        <div class="author-info">
+            <h3>Об авторе</h3>
+            <p>{{ book.author.bio }}</p>
+        </div>
+    </div>
+{% endblock %}
