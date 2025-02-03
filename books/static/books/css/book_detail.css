@@ -1,0 +1,38 @@
+.book-detail, .author-detail {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.book-cover, .author-photo {
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.book-cover {
+    width: 400px;
+    height: auto;
+}
+
+.author-photo {
+    width: 300px;
+    height: auto;
+}
+
+.book-info, .author-info {
+    flex: 1;
+}
+
+h1, h3 {
+    margin: 0 0 10px;
+}
+
+p {
+    line-height: 1.5;
+    margin: 5px 0;
+}
