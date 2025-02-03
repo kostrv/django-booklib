@@ -1,4 +1,3 @@
 python manage.py makemigrations books
 python manage.py migrate
-
 python .\add_data_to_db.py
