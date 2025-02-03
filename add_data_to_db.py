@@ -11,15 +11,15 @@ Book.objects.all().delete()
 BookDetail.objects.all().delete()
 
 authors = [
-    Author(id=1, name='Лев Толстой', img_src='author/tolstoy.jpg', years_of_age='1828-1910',
+    Author(id=1, name='лев толстой', img_src='author/tolstoy.jpg', years_of_age='1828-1910',
            bio='Русский писатель, философ, публицист, родоначальник толстовства.', works='Война и мир, Анна Каренина'),
-    Author(id=2, name='Федор Достоевский', img_src='author/dostoevsky.jpg', years_of_age='1821-1881',
+    Author(id=2, name='федор достоевский', img_src='author/dostoevsky.jpg', years_of_age='1821-1881',
            bio='Один из величайших русских писателей, мыслитель, философ.', works='Преступление и наказание, Идиот'),
-    Author(id=3, name='Александр Пушкин', img_src='author/pushkin.jpg', years_of_age='1799-1837',
+    Author(id=3, name='александр пушкин', img_src='author/pushkin.jpg', years_of_age='1799-1837',
            bio='Русский поэт, драматург, основоположник современного русского языка.', works='Евгений Онегин, Борис Годунов'),
-    Author(id=4, name='Джордж Оруэлл', img_src='author/orwell.jpg', years_of_age='1903-1950',
+    Author(id=4, name='джордж оруэлл', img_src='author/orwell.jpg', years_of_age='1903-1950',
            bio='Британский писатель и публицист, автор антиутопий.', works='1984, Скотный двор'),
-    Author(id=5, name='Фрэнсис Скотт Фицджеральд', img_src='author/fitzgerald.jpg', years_of_age='1896-1940',
+    Author(id=5, name='фрэнсис скотт фицджеральд', img_src='author/fitzgerald.jpg', years_of_age='1896-1940',
            bio='Американский писатель, мастер прозы.', works='Великий Гэтсби, Ночь нежна'),
 ]
 
@@ -28,15 +28,15 @@ Author.objects.bulk_create(authors)
 
 # Добавление книг
 books = [
-    Book(id=1, title='Война и мир', author_id=1, img_src='book/war_and_peace.jpg',
+    Book(id=1, title='война и мир', author_id=1, img_src='book/war_and_peace.jpg',
          publication_date='1869-01-01', short_desc='Эпическое произведение о войне 1812 года.'),
-    Book(id=2, title='Преступление и наказание', author_id=2, img_src='book/crime.jpg',
+    Book(id=2, title='преступление и наказание', author_id=2, img_src='book/crime.jpg',
          publication_date='1866-01-01', short_desc='Рассказ о преступлении и его моральных последствиях.'),
-    Book(id=3, title='Евгений Онегин', author_id=3, img_src='book/onegin.jpg',
+    Book(id=3, title='евгений онегин', author_id=3, img_src='book/onegin.jpg',
          publication_date='1833-01-01', short_desc='Роман в стихах о дворянском обществе.'),
     Book(id=4, title='1984', author_id=4, img_src='book/1984.jpg',
          publication_date='1949-06-08', short_desc='Антиутопия о тоталитарном обществе.'),
-    Book(id=5, title='Великий Гэтсби', author_id=5, img_src='book/gatsby.jpg',
+    Book(id=5, title='великий гэтсби', author_id=5, img_src='book/gatsby.jpg',
          publication_date='1925-04-10', short_desc='История о жизни американской элиты 1920-х годов.'),
 ]
 
@@ -52,7 +52,7 @@ book_details = [
     BookDetail(id=5, book_id=5, description='История любви и предательства в эпоху джаза.'),
 ]
 
-# Сохраняем описания книг в БД
+# Сохраняем детальное описание книг в БД
 BookDetail.objects.bulk_create(book_details)
 
 print('Database updated successfully!')
