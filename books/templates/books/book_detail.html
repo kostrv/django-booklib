@@ -13,8 +13,8 @@
         <img class="book-cover" src="{% static 'books/img/' %}{{ book.img_src }}" alt="{{ book.title }}">
 
         <div class="book-info">
-            <h1>{{ book.title }}</h1>
-            <p><strong>Автор:</strong> {{ book.author.name }}</p>
+            <h1 class="capitalize">{{ book.title }}</h1>
+            <p class="capitalize"><strong>Автор:</strong> {{ book.author.name }}</p>
             <p><strong>Дата публикации:</strong> {{ book.publication_date }}</p>
             <p>{{ book.details.description }}</p>
         </div>
